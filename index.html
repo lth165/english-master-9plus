@@ -7820,10 +7820,7 @@ const App: React.FC = () => {
         var sourceCode = document.getElementById('tsx-source').textContent;
         var compiled = Babel.transform(sourceCode, {
           filename: 'app.tsx',
-          presets: [
-            ['typescript', { isTSX: true, allExtensions: true }],
-            'react'
-          ]
+          presets: ['typescript', 'react']
         }).code;
         var runner = new Function('React', 'ReactDOM', compiled);
         runner(window.React, window.ReactDOM);
